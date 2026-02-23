@@ -7,21 +7,19 @@ set -euo pipefail
 # installer. Hosted on GitHub Pages for a short URL.
 #
 # Install latest version:
-#   curl -fsSL https://brianwynne.github.io/audiotxcontrol-install/install.sh \
-#     | sudo bash -s -- --token github_pat_xxxxx
+#   curl -fsSL https://brianwynne.github.io/audiotxcontrol-install/install.sh | sudo bash
 #
 # Install specific version:
 #   curl -fsSL https://brianwynne.github.io/audiotxcontrol-install/install.sh \
-#     | sudo bash -s -- --tag v1.2.0 --token github_pat_xxxxx
+#     | sudo bash -s -- --tag v1.2.0
 #
-# With GITHUB_TOKEN env var (no --token needed):
-#   export GITHUB_TOKEN=github_pat_xxxxx
+# Override token (if needed):
 #   curl -fsSL https://brianwynne.github.io/audiotxcontrol-install/install.sh \
-#     | sudo -E bash
+#     | sudo bash -s -- --token github_pat_xxxxx
 # ============================================================
 
 TAG=""
-GH_TOKEN="${GITHUB_TOKEN:-}"
+GH_TOKEN="${GITHUB_TOKEN:-github_pat_11AL7C2SI0spEpsYrFxH2n_lXWJ1o8YNYaFakEG7g48dTwpZtwA0jpASCzdHcCuM362SU5HWUUj4jh00zN}"
 EXTRA_ARGS=()
 REPO="brianwynne/audiotxcontrol"
 

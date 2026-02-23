@@ -86,6 +86,6 @@ echo "[INFO] Extracting..."
 mkdir -p "$TMPDIR/bundle"
 tar -xzf "$TMPDIR/$BUNDLE" -C "$TMPDIR/bundle"
 
-# Run the installer
+# Run the installer — pass the GitHub token so it can be saved for future upgrades
 echo "[INFO] Running installer..."
-bash "$TMPDIR/bundle/install-audiotxcontrol.sh" "${EXTRA_ARGS[@]}"
+GITHUB_TOKEN="$GH_TOKEN" bash "$TMPDIR/bundle/install-audiotxcontrol.sh" --github-token "$GH_TOKEN" "${EXTRA_ARGS[@]}"
